@@ -197,7 +197,8 @@ def test_reg():
                           u"<p> <span>p2</span> <br/>p3</p>" \
                           u"<other style='other_style'>other</other>我们都是<第一章><1><>" \
                           u"<a>link_data</a>a_middle<a href>link_data2</a>" \
-                          u"</div>"
+                          u"<b style='font-weight:bold;'>bold</b>" \
+                          u"div-content</div>"
     print raw_chapter_content.encode('gbk')
     print chapter_format(raw_chapter_content).encode('gbk')
 

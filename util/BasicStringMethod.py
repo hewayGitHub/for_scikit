@@ -20,7 +20,7 @@ def is_chinese(char):
     """
         判断char是否为中文，char为unicode
     """
-    if char >= u'\u4e00' and char <= u'\u9fa5':
+    if u'\u4e00' <= char <= u'\u9fa5':
         return True
     else:
         return False
@@ -30,7 +30,7 @@ def is_number(char):
     """
         判断char是否为数字，char为unicode
     """
-    if char >= u'\u0030' and char <= u'\u0039':
+    if u'\u0030' <= char <= u'\u0039':
         return True
     else:
         return False
@@ -40,9 +40,9 @@ def is_alphabet(char):
     """
         判断char是否为字母，char为unicode
     """
-    if char >= u'\u0041' and char <= u'\u005a':
+    if u'\u0041' <= char <= u'\u005a':
         return True
-    if char >= u'\u0061' and char <= u'\u007a':
+    if u'\u0061' <= char <= u'\u007a':
         return True
     return False
 
@@ -126,17 +126,12 @@ def url_format(url):
     url = url.replace("'", "")
     return url
 
-
-def string_similarity(string_x, string_y):
-    """
-    """
-    return Levenshtein.ratio(string_x, string_y)
-
-
 if __name__ == '__main__':
     string = '我是abc**987&^%test我是全角'.decode('GBK', 'ignore')
-    print(string.encode('utf8', 'ignore'))
-    print(string_filter(string).encode('utf8', 'ignore'))
+    print(string)
+    print(string_filter(string))
+
+    print is_chinese(u'！')
 
 
 
